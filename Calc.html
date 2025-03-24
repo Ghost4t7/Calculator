@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script language="javaScript">
+	var op,n1,n2;
+	
+	function f1(n)
+	{
+		t=f.d.value;
+		if(t=="0")
+			f.d.value=n;
+		else
+			f.d.value=t+n;
+	}
+	function f2(ope)
+	{
+		op=ope;
+		n1=parseFloat(f.d.value);
+		f.d.value="";	
+	}
+	function f3()
+	{
+		n2=parseFloat(f.d.value);
+		switch(op)
+		{
+			case '+':
+					f.d.value=n1+n2;
+					break;
+			case '-':
+					f.d.value=n1-n2;
+					break;
+			case '*':
+					f.d.value=n1*n2;
+					break;
+			case '/':
+					f.d.value=n1/n2;
+					break;
+			case '^':
+					f.d.value=1;
+					for(i=0;i<n2;i++)
+						{
+							f.d.value=f.d.value*n1;
+						}
+					break;		
+			}
+	}
+	function f4()
+	{
+		f.d.value=f.d.value/100;
+	}
+	function f5()
+	{
+		f.d.value=f.d.value.substr(0,f.d.value.length-1)
+	}
+
+
+</script>
+<meta charset="utf-8">
+<title>Calculator | New</title>
+	<link rel="stylesheet" href="CalcCSS.css">
+</head>
+
+<body>
+	
+
+	<div class="container">
+		<form name="f">
+			<h1><center><b><marquee style="color: white ;font-family:Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Aniket Paul's Calculator</marquee></b></center></h1><!-- </center></caption> -->
+		<div class="display">
+			<tr align=center><td colspan=4><input type=text name=d size=30></td></tr>
+		</div>
+			<div class="buttons">
+				<div class="row">
+					<td><input type=button class="b1" value="  7  " onClick="f1(7)" ></td>
+					<td><input type=button class="b1" value="  8  " onClick="f1(8)" ></td>
+					<td><input type=button class="b1" value="  9  " onClick="f1(9)" ></td>
+				  	<td><input type=button class="b2" value="  +  " onClick="f2('+')" ></td>
+				</div>
+				
+				<div class="row">
+					<td><input type=button class="b1" value="  4  " onClick="f1(4)" ></td>
+					<td><input type=button class="b1" value="  5  " onClick="f1(5)" ></td>
+					<td><input type=button class="b1" value="  6  " onClick="f1(6)" ></td>
+					<td><input type=button class="b2" value="  -  " onClick="f2('-')" ></td>
+				</div>
+				
+				<div class="row">
+					<td><input type=button class="b1" value="  1  " onClick="f1(1)" ></td>
+					<td><input type=button class="b1" value="  2  " onClick="f1(2)" ></td>
+					<td><input type=button class="b1" value="  3  " onClick="f1(3)" ></td>
+					<td><input type=button class="b2" value="   /  " onClick="f2('/')" ></td>
+				</div>
+				
+				<div class="row">
+					<td><input type=button class="b1" value="  .  "onclick="f1('.')" ></td>
+					<td><input type=button class="b1" value="  0  " onClick="f1(0)" ></td>
+					<td><input type=button class="b2" value="  ^  " onClick="f2('^')" ></td>
+					<td><input type=button class="b2" value="  x  " onClick="f2('*')" ></td>
+				 </div>
+
+				 <div class="row">
+				 	<td><input type=button class="b2" value="AC" onClick="f.d.value=0"></td>
+					<td><input type=button class="b2" value="  <  " onClick=" f5() "></td>
+					<td><input type=button class="b2" value="  %  " onClick="f4()" ></td>
+					<td><input type=button class="b3" value="  =  " onClick="f3()" ></td>
+				</div>
+
+			</div>
+		
+		</form>
+	</div>
+</body>
+	
+</html>
